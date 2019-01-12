@@ -1,0 +1,37 @@
+{
+	"name": "@mloureiro/react-native-expandable-text",
+	"description": "React Native Text component that collapses and expands based on the number of lines",
+	"version": "0.0.1",
+	"license": "MIT",
+	"author": {
+		"name": "Marcos Loureiro",
+		"email": "mloureiro.dev@gmail.com"
+	},
+	"keywords": [
+		"react-native",
+		"text",
+		"expandable",
+		"collapsable",
+		"read",
+		"view",
+		"more"
+	],
+	"main": "lib/index.js",
+	"files": [
+		"lib/**/*"
+	],
+	"scripts": {
+		"build": "tsc",
+		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\"",
+		"lint": "tslint -p tsconfig.json"
+	},
+	"devDependencies": {
+		"prettier": "^1.15.3",
+		"tslint": "^5.12.1",
+		"tslint-config-prettier": "^1.17.0",
+		"typescript": "^3.2.2"
+	},
+	"peerDependencies": {
+		"react-native": "*"
+	}
+}
