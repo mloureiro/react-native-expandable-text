@@ -84,7 +84,7 @@ export class ExpandableText extends PureComponent<Props, State>
 	private setUpMeasurement = async (): Promise<void> => {
 		if (!this.text) throw Error('Text is not set to be measured')
 		const { numberOfLines } = this.props
-		await nextFrameAsync();
+		await nextFrameAsync()
 
 		if (!this.isTextMounted) return
 		this.maxHeight = await measureHeight(this.text)
