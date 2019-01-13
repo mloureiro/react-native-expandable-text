@@ -13,7 +13,7 @@ interface ExpandableTextInterface {
 interface Props {
 	numberOfLines: number
 	children: string | Text
-	ref?: (ref: ExpandableTextInterface) => void
+	controller?: (ref: ExpandableTextInterface) => void
 	onReady?: (prop: { isCollapsible: boolean }) => void
 }
 
@@ -37,7 +37,7 @@ export class ExpandableText extends PureComponent<Props, State>
 	constructor(props: Props) {
 		super(props)
 
-		if (props.ref) props.ref(this)
+		if (props.controller) props.controller(this)
 	}
 
 	public collapse = (): void => {
