@@ -16,9 +16,9 @@
 		"view",
 		"more"
 	],
-	"main": "lib/index.js",
+	"main": "dist/index.js",
 	"files": [
-		"lib/**/*"
+		"dist/**/*"
 	],
 	"scripts": {
 		"build": "tsc",
