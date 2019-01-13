@@ -1,2 +1,1 @@
-export const Greeter = (name: string) =>
-	`Hello ${name} babaloo`
+export { ExpandableText } from './ExpandableText'
