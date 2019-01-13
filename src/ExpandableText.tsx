@@ -31,8 +31,8 @@ export class ExpandableText extends PureComponent<Props, State>
 		numberOfLines: 0,
 	}
 
-	private _text?: Text
-	private _isMounted: boolean = false
+	private text?: Text
+	private isTextMounted: boolean = false
 
 	constructor(props: Props) {
 		super(props)
@@ -65,12 +65,12 @@ export class ExpandableText extends PureComponent<Props, State>
 	}
 
 	public componentDidMount(): void {
-		this._isMounted = true
+		this.isTextMounted = true
 		this.setUpMeasurement()
 	}
 
 	public componentWillUnmount(): void {
-		this._isMounted = false
+		this.isTextMounted = false
 	}
 
 	public render(): React.ReactNode {
@@ -82,17 +82,17 @@ export class ExpandableText extends PureComponent<Props, State>
 	}
 
 	private setUpMeasurement = async (): Promise<void> => {
-		if (!this._text) throw Error('Text is not set to be measured')
+		if (!this.text) throw Error('Text is not set to be measured')
 		const { numberOfLines } = this.props
 		await nextFrameAsync();
 
-		if (!this._isMounted) return
-		this.maxHeight = await measureHeight(this._text)
+		if (!this.isTextMounted) return
+		this.maxHeight = await measureHeight(this.text)
 		this.setState({ numberOfLines })
 		await nextFrameAsync()
 
-		if (!this._isMounted) return
-		this.collapsedHeight = await measureHeight(this._text)
+		if (!this.isTextMounted) return
+		this.collapsedHeight = await measureHeight(this.text)
 
 		const isCollapsible: boolean = this.maxHeight > this.collapsedHeight
 		this.setState({
@@ -101,5 +101,5 @@ export class ExpandableText extends PureComponent<Props, State>
 		})
 	}
 
-	private setText = (ref: Text) => (this._text = ref)
+	private setText = (ref: Text) => (this.text = ref)
 }
