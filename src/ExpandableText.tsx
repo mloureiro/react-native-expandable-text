@@ -69,6 +69,16 @@ export class ExpandableText extends PureComponent<Props, State>
 		this.setUpMeasurement()
 	}
 
+	public componentDidUpdate(prevProps: Readonly<Props>): void {
+		if (
+			prevProps.numberOfLines !== this.props.numberOfLines ||
+			// @TODO find better comparison for when children has changed
+			prevProps.children !== this.props.children
+		) {
+			this.setUpMeasurement()
+		}
+	}
+
 	public componentWillUnmount(): void {
 		this.isTextMounted = false
 	}
