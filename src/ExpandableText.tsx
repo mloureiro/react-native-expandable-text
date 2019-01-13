@@ -1,6 +1,10 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, ReactNode } from 'react'
 import { Text } from 'react-native'
-import { measureHeight, nextFrameAsync } from './utils'
+import {
+	extractTextFromReactNode,
+	measureHeight,
+	nextFrameAsync,
+} from './utils'
 
 interface ExpandableTextInterface {
 	collapse(): void
@@ -70,10 +74,11 @@ export class ExpandableText extends PureComponent<Props, State>
 	}
 
 	public componentDidUpdate(prevProps: Readonly<Props>): void {
+		const oldText = extractTextFromReactNode(prevProps.children)
+		const newText = extractTextFromReactNode(this.props.children)
 		if (
 			prevProps.numberOfLines !== this.props.numberOfLines ||
-			// @TODO find better comparison for when children has changed
-			prevProps.children !== this.props.children
+			newText !== oldText
 		) {
 			this.setUpMeasurement()
 		}
