@@ -95,10 +95,13 @@ export class ExpandableText extends PureComponent<Props, State>
 		this.collapsedHeight = await measureHeight(this.text)
 
 		const isCollapsible: boolean = this.maxHeight > this.collapsedHeight
-		this.setState({
-			isCollapsible,
-			numberOfLines: isCollapsible ? numberOfLines : 0,
-		})
+		this.setState(
+			{
+				isCollapsible,
+				numberOfLines: isCollapsible ? numberOfLines : 0,
+			},
+			() => this.props.onReady && this.props.onReady({ isCollapsible }),
+		)
 	}
 
 	private setText = (ref: Text) => (this.text = ref)
