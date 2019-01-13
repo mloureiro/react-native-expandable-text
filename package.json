@@ -26,7 +26,11 @@
 		"lint": "tslint -p tsconfig.json"
 	},
 	"devDependencies": {
+		"@types/react": "^16.7.18",
+		"@types/react-native": "^0.57.27",
 		"prettier": "^1.15.3",
+		"react": "^16.7.0",
+		"react-native": "^0.57.8",
 		"tslint": "^5.12.1",
 		"tslint-config-prettier": "^1.17.0",
 		"typescript": "^3.2.2"
