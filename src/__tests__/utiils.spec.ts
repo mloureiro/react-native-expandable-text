@@ -5,12 +5,12 @@ import { measureHeight } from '../utils'
 describe('measureHeight', () => {
 	it('should get `height` property from measure', () => {
 		const result = {
-			x: 16,
-			y: 25,
-			width: 34,
 			height: 43,
 			pageX: 52,
 			pageY: 61,
+			width: 34,
+			x: 16,
+			y: 25,
 		}
 		const myComponent: Partial<NativeComponent> = {
 			measure: (callback: MeasureOnSuccessCallback): void =>
