@@ -20,9 +20,12 @@ export function extractTextFromReactNode(component: ReactNode): string {
 		return component.map(extractTextFromReactNode).join(' ')
 	}
 
-	const child: ReactNode =
-		// @ts-ignore issue: https://stackoverflow.com/questions/54170961/ts2339-property-props-does-not-exist-on-type
-		component.children || (component.props && component.props.children)
+	if ('children' in component)
+		return extractTextFromReactNode(component.children)
 
-	return extractTextFromReactNode(child || '')
+	if ('props' in component && component.props.children) {
+		return extractTextFromReactNode(component.props.children)
+	}
+
+	return ''
 }
