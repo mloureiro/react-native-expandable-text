@@ -23,6 +23,7 @@
 	"scripts": {
 		"build": "tsc",
 		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\"",
+		"format:validate": "prettier -l \"src/**/*.ts\" \"src/**/*.tsx\"",
 		"lint": "tslint -p tsconfig.json"
 	},
 	"devDependencies": {
