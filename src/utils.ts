@@ -20,8 +20,9 @@ export function extractTextFromReactNode(component: ReactNode): string {
 		return component.map(extractTextFromReactNode).join(' ')
 	}
 
-	if ('children' in component)
+	if ('children' in component) {
 		return extractTextFromReactNode(component.children)
+	}
 
 	if ('props' in component && component.props.children) {
 		return extractTextFromReactNode(component.props.children)
