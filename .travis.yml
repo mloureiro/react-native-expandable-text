@@ -14,3 +14,4 @@ install:
 script:
   - yarn format:validate
   - yarn lint
+  - yarn test
