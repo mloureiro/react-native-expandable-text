@@ -2,6 +2,7 @@
 
 [![NPM Version](http://img.shields.io/npm/v/@mloureiro/react-native-expandable-text.svg?style=flat-square)](https://npmjs.com/package/react-native-expandable-text)
 [![License](http://img.shields.io/npm/l/@mloureiro/react-native-expandable-text.svg?style=flat-square)](https://tldrlegal.com/license/-isc-license)
+[![Travis CI](https://travis-ci.com/mloureiro/react-native-expandable-text.svg?branch=master)](https://travis-ci.com/mloureiro/react-native-expandable-text)
 
 ## Introduction
 
