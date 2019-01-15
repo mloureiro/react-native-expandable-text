@@ -3,3 +3,7 @@
 
 # TypeScript
 /dist
+
+# Jest
+.jest/
+/coverage/
