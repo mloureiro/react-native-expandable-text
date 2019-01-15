@@ -1,6 +1,6 @@
 import 'jest'
 import { MeasureOnSuccessCallback, NativeComponent } from 'react-native'
-import { measureHeight } from '../utils'
+import { measureHeight, nextFrameAsync } from '../utils'
 
 describe('measureHeight', () => {
 	it('should get `height` property from measure', () => {
@@ -27,5 +27,16 @@ describe('measureHeight', () => {
 		expect(measureHeight(myComponent as NativeComponent)).resolves.toBe(
 			result.height,
 		)
+	})
+})
+
+describe('nextFrameAsync', () => {
+	it('should jump frame', async () => {
+		const mock = jest.fn()
+
+		new Promise(r => r()).then(mock)
+		expect(mock).not.toHaveBeenCalled()
+		await nextFrameAsync()
+		expect(mock).toHaveBeenCalled()
 	})
 })
