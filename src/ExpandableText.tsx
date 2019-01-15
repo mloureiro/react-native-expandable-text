@@ -88,7 +88,7 @@ export class ExpandableText extends PureComponent<Props, State>
 		this.isTextMounted = false
 	}
 
-	public render(): React.ReactNode {
+	public render(): ReactNode {
 		return (
 			<Text ref={this.setText} numberOfLines={this.state.numberOfLines}>
 				{this.props.children}
