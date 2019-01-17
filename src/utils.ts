@@ -12,7 +12,7 @@ export function nextFrameAsync(): Promise<void> {
 }
 
 export function extractTextFromReactNode(component: ReactNode): string {
-	if (!component) return ''
+	if (component === null) return ''
 
 	if (typeof component !== 'object') return String(component)
 
