@@ -5,7 +5,7 @@
 
 
 [![Travis CI](https://travis-ci.com/mloureiro/react-native-expandable-text.svg?branch=master)](https://travis-ci.com/mloureiro/react-native-expandable-text)
-[![Coverage Status](https://coveralls.io/repos/github/mloureiro/react-native-expandable-text/badge.svg?branch=dev%2Fsetup-tests)](https://coveralls.io/github/mloureiro/react-native-expandable-text?branch=dev%2Fsetup-tests)
+[![Coverage Status](https://coveralls.io/repos/github/mloureiro/react-native-expandable-text/badge.svg?branch=master)](https://coveralls.io/github/mloureiro/react-native-expandable-text?branch=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/mloureiro/react-native-expandable-text/badge)](https://www.codefactor.io/repository/github/mloureiro/react-native-expandable-text)
 
 ## Introduction
