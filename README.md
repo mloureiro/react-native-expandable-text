@@ -1,13 +1,12 @@
 # React Native Expandable Text
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5566cd3beda941fda0d0d723666053d0)](https://app.codacy.com/app/mloureiro.dev/react-native-expandable-text?utm_source=github.com&utm_medium=referral&utm_content=mloureiro/react-native-expandable-text&utm_campaign=Badge_Grade_Dashboard)
 [![NPM Version](http://img.shields.io/npm/v/@mloureiro/react-native-expandable-text.svg?style=flat-square)](https://npmjs.com/package/react-native-expandable-text)
 [![License](http://img.shields.io/npm/l/@mloureiro/react-native-expandable-text.svg?style=flat-square)](https://tldrlegal.com/license/-isc-license)
-
 
 [![Travis CI](https://travis-ci.com/mloureiro/react-native-expandable-text.svg?branch=master)](https://travis-ci.com/mloureiro/react-native-expandable-text)
 [![Coverage Status](https://coveralls.io/repos/github/mloureiro/react-native-expandable-text/badge.svg?branch=master)](https://coveralls.io/github/mloureiro/react-native-expandable-text?branch=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/mloureiro/react-native-expandable-text/badge)](https://www.codefactor.io/repository/github/mloureiro/react-native-expandable-text)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5566cd3beda941fda0d0d723666053d0)](https://app.codacy.com/app/mloureiro.dev/react-native-expandable-text?utm_source=github.com&utm_medium=referral&utm_content=mloureiro/react-native-expandable-text&utm_campaign=Badge_Grade_Dashboard)
 
 ## Introduction
 
@@ -17,10 +16,10 @@ ExpandableText React Native component which allows to collapse and expand text. 
 
 There are already a few projects with the same propose, so why another one?
 
-* **not opionated**:  a few of them have the text already in place, or must have the touchable render right after the text.
-* **full control**: provides control API so that the dev uses as he needs
-* **works with typography**: if you already have the typography based on the design system, and now have to duplicate all that can be collapsible it sucks, this component does NOT replace your text, only provides the required functionality
-* **simply works**: doesn't matter how nested the text components are, the styles they use, the component take that into account.
+-   **not opionated**: a few of them have the text already in place, or must have the touchable render right after the text.
+-   **full control**: provides control API so that the dev uses as he needs
+-   **works with typography**: if you already have the typography based on the design system, and now have to duplicate all that can be collapsible it sucks, this component does NOT replace your text, only provides the required functionality
+-   **simply works**: doesn't matter how nested the text components are, the styles they use, the component take that into account.
 
 ## Installation
 
@@ -36,7 +35,7 @@ yarn add @mloureiro/react-native-expandable-text
 
 ## Usage
 
-#### API:
+### API:
 
 ```typescript
 interface Props {
@@ -55,7 +54,7 @@ interface ExpandableTextInterface {
 }
 ```
 
-#### Example
+### Example
 
 ```typescript jsx
 import React, { PureComponent } from 'react'
@@ -107,4 +106,3 @@ const styles = StyleSheet.create({
   toggler: { color: 'blue' },
 })
 ```
-
