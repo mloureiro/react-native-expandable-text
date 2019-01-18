@@ -4,18 +4,16 @@
 		"module": "es2015",
 		"moduleResolution": "node",
 		"allowSyntheticDefaultImports": true,
-		"lib": [
-			"es2015",
-		],
+		"lib": ["es2015"],
 		"types": [
 			"react",
-			"react-native",
+			"react-native"
 		],
 		"jsx": "react",
 		"strict": true,
 		"sourceMap": true,
 		"declaration": true,
-		"outDir": "./dist",
+		"outDir": "./dist"
 	},
 	"include": ["src"],
 	"exclude": ["node_modules", "**/__tests__/*"]
