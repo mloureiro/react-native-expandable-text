@@ -54,7 +54,8 @@
 		"typescript": "^3.2.2"
 	},
 	"peerDependencies": {
-		"react-native": "*"
+		"react": "^16",
+		"react-native": "^0.57"
 	},
 	"husky": {
 		"hooks": {
