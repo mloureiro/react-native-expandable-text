@@ -1,13 +1,16 @@
 import { ReactNode } from 'react'
 import { NativeComponent } from 'react-native'
 
-export function measureHeight(component: NativeComponent): Promise<number> {
+export async function measureHeight(
+	component: NativeComponent,
+): Promise<number> {
 	return new Promise(resolve => {
 		component.measure((x, y, w, h) => resolve(h))
 	})
 }
 
-export function nextFrameAsync(): Promise<void> {
+export async function nextFrameAsync(): Promise<void> {
+	// tslint:disable-next-line no-unnecessary-callback-wrapper
 	return new Promise(resolve => requestAnimationFrame(() => resolve()))
 }
 

@@ -17,8 +17,8 @@ interface ExpandableTextInterface {
 interface Props {
 	numberOfLines: number
 	children: string | Text
-	controller?: (ref: ExpandableTextInterface) => void
-	onReady?: (prop: { isCollapsible: boolean }) => void
+	controller?(ref: ExpandableTextInterface): void
+	onReady?(prop: { isCollapsible: boolean }): void
 }
 
 interface State {
@@ -96,7 +96,7 @@ export class ExpandableText extends PureComponent<Props, State>
 		)
 	}
 
-	private setUpMeasurement = async (): Promise<void> => {
+	private readonly setUpMeasurement = async (): Promise<void> => {
 		if (!this.text) throw Error('Text is not set to be measured')
 		const { numberOfLines } = this.props
 		await nextFrameAsync()
@@ -119,5 +119,5 @@ export class ExpandableText extends PureComponent<Props, State>
 		)
 	}
 
-	private setText = (ref: Text) => (this.text = ref)
+	private readonly setText = (ref: Text) => (this.text = ref)
 }
