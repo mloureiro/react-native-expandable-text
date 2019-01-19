@@ -29,7 +29,12 @@
 		],
 		"no-any": true,
 		"no-empty-interface": true,
-		"no-import-side-effect": true,
+		"no-import-side-effect": [
+			true,
+			{
+				"ignore-module": "jest"
+			}
+		],
 		"no-inferrable-types": false,
 		"no-internal-module": true,
 		"no-magic-numbers": true,
@@ -86,7 +91,11 @@
 		"no-eval": true,
 		"no-floating-promises": false,
 		"no-for-in-array": false,
-		"no-implicit-dependencies": true,
+		"no-implicit-dependencies": [
+			true,
+			// @todo "dev" should only be available for tests
+			"dev"
+		],
 		"no-inferred-empty-object-type": true,
 		"no-invalid-template-strings": true,
 		"no-invalid-this": true,
@@ -211,6 +220,7 @@
 		"file-name-casing": [
 			true,
 			{
+				"spec.tsx": "camel-case",
 				".tsx": "pascal-case",
 				".*": "camel-case"
 			}
