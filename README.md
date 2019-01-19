@@ -5,8 +5,7 @@
 
 [![Travis CI](https://travis-ci.com/mloureiro/react-native-expandable-text.svg?branch=master)](https://travis-ci.com/mloureiro/react-native-expandable-text)
 [![Coverage Status](https://coveralls.io/repos/github/mloureiro/react-native-expandable-text/badge.svg?branch=master)](https://coveralls.io/github/mloureiro/react-native-expandable-text?branch=master)
-[![CodeFactor](https://www.codefactor.io/repository/github/mloureiro/react-native-expandable-text/badge)](https://www.codefactor.io/repository/github/mloureiro/react-native-expandable-text)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5566cd3beda941fda0d0d723666053d0)](https://app.codacy.com/app/mloureiro.dev/react-native-expandable-text?utm_source=github.com&utm_medium=referral&utm_content=mloureiro/react-native-expandable-text&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy](https://api.codacy.com/project/badge/Grade/5566cd3beda941fda0d0d723666053d0)](https://app.codacy.com/app/mloureiro.dev/react-native-expandable-text?utm_source=github.com&utm_medium=referral&utm_content=mloureiro/react-native-expandable-text&utm_campaign=Badge_Grade)
 
 ## Introduction
 
