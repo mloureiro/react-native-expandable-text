@@ -1,0 +1,8 @@
+{
+  "*.{ts,tsx}": [
+    "prettier --write",
+    "yarn lint --fix",
+    "git add"
+  ],
+  "*.md": "remark --output --quiet --frail"
+}

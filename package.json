@@ -24,6 +24,8 @@
 		"build": "tsc",
 		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\"",
 		"format:validate": "prettier -l \"src/**/*.ts\" \"src/**/*.tsx\"",
+		"format-md": "remark . --output",
+		"format-md:validate": "remark . --frail",
 		"lint": "tslint -p tsconfig.json",
 		"test": "jest --config jest.config.json",
 		"test:coverage": "yarn test --coverage --coverageReporters=text-lcov | coveralls"
@@ -50,6 +52,9 @@
 		"prettier": "^1.15.3",
 		"react-dom": "^16.7.0",
 		"react-native-mock-render": "^0.1.2",
+		"remark-cli": "^6.0.1",
+		"remark-lint": "^6.0.4",
+		"remark-preset-lint-recommended": "^3.0.2",
 		"ts-jest": "^23.10.5",
 		"tslint": "^5.12.1",
 		"tslint-config-prettier": "^1.17.0",
@@ -59,12 +64,5 @@
 		"hooks": {
 			"pre-commit": "lint-staged"
 		}
-	},
-	"lint-staged": {
-		"*.{ts,tsx}": [
-			"prettier --write",
-			"yarn lint --fix",
-			"git add"
-		]
 	}
 }
