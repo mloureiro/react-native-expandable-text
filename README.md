@@ -4,8 +4,8 @@
 [![License](http://img.shields.io/npm/l/@mloureiro/react-native-expandable-text.svg?style=flat-square)](https://tldrlegal.com/license/-isc-license)
 
 [![Travis CI](https://travis-ci.com/mloureiro/react-native-expandable-text.svg?branch=master)](https://travis-ci.com/mloureiro/react-native-expandable-text)
-[![Coverage Status](https://coveralls.io/repos/github/mloureiro/react-native-expandable-text/badge.svg?branch=master)](https://coveralls.io/github/mloureiro/react-native-expandable-text?branch=master)
-[![Codacy](https://api.codacy.com/project/badge/Grade/5566cd3beda941fda0d0d723666053d0)](https://app.codacy.com/app/mloureiro.dev/react-native-expandable-text?utm_source=github.com&utm_medium=referral&utm_content=mloureiro/react-native-expandable-text&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/fc321bbba83d4ddab1031a825e09dbe4)](https://www.codacy.com/app/mloureiro.dev/react-native-expandable-text?utm_source=github.com&utm_medium=referral&utm_content=mloureiro/react-native-expandable-text&utm_campaign=Badge_Coverage)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fc321bbba83d4ddab1031a825e09dbe4)](https://www.codacy.com/app/mloureiro.dev/react-native-expandable-text?utm_source=github.com&utm_medium=referral&utm_content=mloureiro/react-native-expandable-text&utm_campaign=Badge_Grade)
 
 ## Introduction
 
