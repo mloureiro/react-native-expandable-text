@@ -44,6 +44,7 @@ describe('nextFrameAsync', () => {
 	it('should jump frame', async () => {
 		const mock = jest.fn()
 
+		// tslint:disable-next-line no-inferred-empty-object-type
 		new Promise(r => r()).then(mock)
 		expect(mock).not.toHaveBeenCalled()
 		await nextFrameAsync()
@@ -53,6 +54,7 @@ describe('nextFrameAsync', () => {
 
 describe('extractTextFromReactNode', () => {
 	it('should return empty string nothing is passed', () =>
+		// tslint:disable-next-line no-null-keyword
 		expect(extract(null)).toBe(''))
 
 	it('should return "false" when false is passed', () =>
