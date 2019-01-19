@@ -4,5 +4,8 @@
     "yarn lint --fix",
     "git add"
   ],
-  "*.md": "remark --output --quiet --frail"
+  "*.md": [
+    "remark --output --quiet --frail",
+    "git add"
+  ]
 }
