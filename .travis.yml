@@ -15,4 +15,5 @@ script:
   - yarn format:validate
   - yarn lint
   - yarn test
-  - yarn test:coverage
+  - yarn test:coverage:lcov | npx coveralls
+  - yarn test:coverage:lcov | npx codacy-coverage
