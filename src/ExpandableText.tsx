@@ -14,11 +14,16 @@ interface ExpandableTextInterface {
 	toggle(): void
 }
 
+export interface OnReadyInterface {
+	isCollapsed: boolean
+	isCollapsible: boolean
+}
+
 interface Props {
 	numberOfLines: number
 	children: string | Text
 	controller?(ref: ExpandableTextInterface): void
-	onReady?(prop: { isCollapsible: boolean }): void
+	onReady?(prop: OnReadyInterface): void
 }
 
 interface State {
@@ -115,7 +120,11 @@ export class ExpandableText extends PureComponent<Props, State>
 				isCollapsible,
 				numberOfLines: isCollapsible ? numberOfLines : 0,
 			},
-			() => this.props.onReady && this.props.onReady({ isCollapsible }),
+			() => {
+				if (this.props.onReady) {
+					this.props.onReady({ isCollapsible, isCollapsed: this.isCollapsed() })
+				}
+			},
 		)
 	}
 
