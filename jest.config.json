@@ -4,7 +4,7 @@
     "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
     "^.+\\.tsx?$": "ts-jest"
   },
-  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+  "testMatch":  ["<rootDir>/src/**/*.(spec|test).(ts|tsx|js|jsx)"],
   "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
   "modulePaths": ["<rootDir>"],
   "setupFiles": ["<rootDir>/jest.setup.js"]
