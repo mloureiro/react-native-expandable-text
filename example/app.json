@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "React Native Expandable Text Example",
+    "description": "Examples on how to use Expandable text",
+    "slug": "react-native-expandable-text",
+    "privacy": "public",
+    "sdkVersion": "32.0.0",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "primaryColor": "#fff",
+    "icon": "./assets/app-icon.png",
+    "splash": {
+      "backgroundColor": "#fff",
+      "image": "./assets/splash-screen.png",
+      "resizeMode": "contain"
+    },
+    "packagerOpts": {
+      "assetExts": [
+        "ttf",
+        "mp4"
+      ]
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "githubUrl": "https://github.com/mloureiro/react-native-expandable-text"
+  }
+}

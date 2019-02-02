@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+const path = require('path')
+const fs = require('fs-extra')
+
+const EXPANDABLE_TEXT_DIR = path.join('.')
+const EXPANDABLE_TEXT_EXAMPLE_DIR = path.join(
+	'example',
+	'node_modules',
+	'@mloureiro',
+	'react-native-expandable-text',
+)
+
+function copyFile(source, dest) {
+	return new Promise((resolve, reject) => {
+		fs.copy(source, dest, err => (err ? reject(err) : resolve()))
+	})
+}
+
+async function main() {
+	console.log('Copying javascript')
+	await copyFile(
+		path.join(EXPANDABLE_TEXT_DIR, 'dist'),
+		path.join(EXPANDABLE_TEXT_EXAMPLE_DIR, 'dist'),
+	)
+
+	console.log('Done')
+}
+
+main()
