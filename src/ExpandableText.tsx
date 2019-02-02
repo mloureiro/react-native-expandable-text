@@ -13,8 +13,7 @@ interface ExpandableTextInterface {
 	isCollapsible(): boolean
 	toggle(): void
 }
-
-export interface OnReadyInterface {
+export interface OnChangeInterface {
 	isCollapsed: boolean
 	isCollapsible: boolean
 }
@@ -23,7 +22,8 @@ interface Props {
 	numberOfLines: number
 	children: string | Text
 	controller?(ref: ExpandableTextInterface): void
-	onReady?(prop: OnReadyInterface): void
+	onChange?(prop: OnChangeInterface): void
+	onReady?(prop: OnChangeInterface): void
 }
 
 interface State {
@@ -52,13 +52,13 @@ export class ExpandableText extends PureComponent<Props, State>
 	public collapse = (): void => {
 		if (!this.state.isCollapsible) return
 
-		this.setState({ numberOfLines: this.props.numberOfLines })
+		this.setState({ numberOfLines: this.props.numberOfLines }, this.onChange)
 	}
 
 	public expand = (): void => {
 		if (!this.state.isCollapsible) return
 
-		this.setState({ numberOfLines: 0 })
+		this.setState({ numberOfLines: 0 }, this.onChange)
 	}
 
 	public isCollapsed = (): boolean => this.state.numberOfLines !== 0
@@ -68,9 +68,21 @@ export class ExpandableText extends PureComponent<Props, State>
 	public toggle = (): void => {
 		if (!this.state.isCollapsible) return
 
-		this.setState(state => ({
-			numberOfLines: state.numberOfLines === 0 ? this.props.numberOfLines : 0,
-		}))
+		this.setState(
+			state => ({
+				numberOfLines: state.numberOfLines === 0 ? this.props.numberOfLines : 0,
+			}),
+			this.onChange,
+		)
+	}
+
+	public onChange = (): void => {
+		if (this.props.onChange) {
+			this.props.onChange({
+				isCollapsed: this.isCollapsed(),
+				isCollapsible: this.isCollapsible(),
+			})
+		}
 	}
 
 	public componentDidMount(): void {
