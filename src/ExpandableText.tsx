@@ -1,4 +1,4 @@
-import React, { PureComponent, ReactNode } from 'react'
+import React, { PureComponent, ReactElement, ReactNode, ReactText } from 'react'
 import { Text } from 'react-native'
 import {
 	extractTextFromReactNode,
@@ -6,7 +6,7 @@ import {
 	nextFrameAsync,
 } from './utils'
 
-interface ExpandableTextInterface {
+export interface ExpandableTextInterface {
 	collapse(): void
 	expand(): void
 	isCollapsed(): boolean
@@ -20,7 +20,8 @@ export interface OnChangeInterface {
 
 interface Props {
 	numberOfLines: number
-	children: string | Text
+	// tslint:disable-next-line no-any
+	children: ReactText | ReactElement<any> | Array<ReactText | ReactElement<any>>
 	controller?(ref: ExpandableTextInterface): void
 	onChange?(prop: OnChangeInterface): void
 	onReady?(prop: OnChangeInterface): void
