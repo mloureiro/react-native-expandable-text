@@ -15,10 +15,17 @@ ExpandableText React Native component which allows to collapse and expand text. 
 
 There are already a few projects with the same propose, so why another one?
 
--   **not opionated**: a few of them have the text already in place, or must have the touchable render right after the text.
--   **full control**: provides control API so that the dev uses as he needs
--   **works with typography**: if you already have the typography based on the design system, and now have to duplicate all that can be collapsible it sucks, this component does NOT replace your text, only provides the required functionality
--   **simply works**: doesn't matter how nested the text components are, the styles they use, the component take that into account.
+-   **animated**
+-   **not opionated**
+    -   some of other implementations already have the text in place, 
+    -   force the touchable render to be right after the text
+-   **full control**
+    -   provides control API so that you use as you wish
+-   **works with typography**: 
+    -   it allows to use your own text components implementation (instead of forcing to style the ExpandableText component)
+-   **simply works**: 
+    -   it works with any level of nested text components
+    -   it takes the styling into account when measuring
 
 ## Installation
 
@@ -34,13 +41,17 @@ yarn add @mloureiro/react-native-expandable-text
 
 ## Usage
 
+An example can be found [here](./example).
+
 ### API:
 
 ```typescript
 interface Props {
-  numberOfLines: number
   children: string | Text
+	duration?: number
+	easing?: EasingMode
   controller?: (ref: ExpandableTextInterface) => void
+  numberOfLines: number
   onReady?: (prop: { isCollapsible: boolean }) => void
 }
 
@@ -53,55 +64,4 @@ interface ExpandableTextInterface {
 }
 ```
 
-### Example
-
-```typescript jsx
-import React, { PureComponent } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { ExpandableText } from '@mloureiro/react-native-expandable-text'
-
-export class MyComponent extends PureComponent<void> {
-  private controller: ExpandableTextInterface;
-
-  public render(): React.ReactNode {
-    return (
-      <View style={styles.container}>
-        <ExpandableText
-          controller={this.setController}
-          numberOfLines={4} 
-        >
-          <Text style={styles.normalText}>
-            {`Lorem Simpson perfectly cromulent highway 9 bird sanctuary`}
-            <Text style={styles.superBigText}>
-              {`the congealed group magumba ha ha! pollutinest `}
-            </Text>
-            {`everybody get naked don'ter doodily rappin' surfer snacktacular america junior `}
-          </Text>
-        </ExpandableText>
-
-        <Text onPress={this.toggle} style={styles.toggler}>
-          {'Toggle text'}
-        </Text>
-      </View>
-    )
-  }
-  
-  private setController = (controller: ExpandableTextInterface): void => {
-    this.controller = controller; 
-  }
-  
-  private toggle = (): void => {
-    this.controller.toggle()
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-  },
-  normalText: { fontSize: 12 },
-  superBigText: { fontSize: 36 },
-  toggler: { color: 'blue' },
-})
-```
+For the available easing modes, there's the documentation on the [react-native-collapsible](https://github.com/oblador/react-native-collapsible#properties) package.
