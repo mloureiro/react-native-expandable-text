@@ -32,6 +32,7 @@ export class MainScreen extends PureComponent<void, State> {
 					controller={this.setController}
 					onChange={this.onChange}
 					onReady={this.onChange}
+					duration={500}
 				>
 					<ExampleText />
 				</ExpandableText>
