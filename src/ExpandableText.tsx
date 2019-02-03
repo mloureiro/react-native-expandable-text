@@ -13,18 +13,26 @@ export interface ExpandableTextInterface {
 	isCollapsible(): boolean
 	toggle(): void
 }
+
 export interface OnChangeInterface {
 	isCollapsed: boolean
 	isCollapsible: boolean
 }
 
-interface Props {
+export interface OnReadyInterface extends OnChangeInterface {
+	height: {
+		expanded: number
+		collapsed: number
+	}
+}
+
+export interface Props {
 	numberOfLines: number
 	// tslint:disable-next-line no-any
 	children: ReactText | ReactElement<any> | Array<ReactText | ReactElement<any>>
 	controller?(ref: ExpandableTextInterface): void
 	onChange?(prop: OnChangeInterface): void
-	onReady?(prop: OnChangeInterface): void
+	onReady?(prop: OnReadyInterface): void
 }
 
 interface State {
@@ -34,13 +42,13 @@ interface State {
 
 export class ExpandableText extends PureComponent<Props, State>
 	implements ExpandableTextInterface {
-	public maxHeight: number = 0
-	public collapsedHeight: number = 0
 	public state: State = {
 		isCollapsible: true,
 		numberOfLines: 0,
 	}
 
+	private maxHeight: number = 0
+	private collapsedHeight: number = 0
 	private text?: Text
 	private isTextMounted: boolean = false
 
@@ -133,13 +141,24 @@ export class ExpandableText extends PureComponent<Props, State>
 				isCollapsible,
 				numberOfLines: isCollapsible ? numberOfLines : 0,
 			},
-			() => {
-				if (this.props.onReady) {
-					this.props.onReady({ isCollapsible, isCollapsed: this.isCollapsed() })
-				}
-			},
+			this.onReady,
 		)
 	}
 
 	private readonly setText = (ref: Text) => (this.text = ref)
+
+	private readonly onReady = (): void => {
+		if (!this.props.onReady) {
+			return
+		}
+
+		this.props.onReady({
+			height: {
+				collapsed: this.collapsedHeight,
+				expanded: this.maxHeight,
+			},
+			isCollapsed: this.isCollapsed(),
+			isCollapsible: this.isCollapsible(),
+		})
+	}
 }
