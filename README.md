@@ -11,7 +11,7 @@
 
 ExpandableText React Native component which allows to collapse and expand text. This was built to be very flexible but still lightweight.
 
-<img src="./assets/readme-example.gif" alt="component at work example" height=400 />
+<img src="https://raw.githubusercontent.com/mloureiro/react-native-expandable-text/master/assets/readme-example.gif" alt="component at work example" height=400 />
 
 There are already a few projects with the same propose, so why another one?
 
