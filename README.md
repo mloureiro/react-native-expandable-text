@@ -48,8 +48,8 @@ An example can be found [here](./example).
 ```typescript
 interface Props {
   children: string | Text
-	duration?: number
-	easing?: EasingMode
+  duration?: number
+  easing?: EasingMode
   controller?: (ref: ExpandableTextInterface) => void
   numberOfLines: number
   onReady?: (prop: { isCollapsible: boolean }) => void
