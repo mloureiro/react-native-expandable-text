@@ -3,7 +3,7 @@
 	"description": "React Native Text component that collapses and expands based on the number of lines",
 	"version": "0.2.1",
 	"license": "ISC",
-	"homepage": "https://github.com/mloureiro/react-native-expandable-text",
+	"repository": "https://github.com/mloureiro/react-native-expandable-text",
 	"author": {
 		"name": "Marcos Loureiro",
 		"email": "mloureiro.dev@gmail.com"
